@@ -63,7 +63,7 @@ class AllTodos extends Component {
                     return (
                         <div key={todo.id}>
                             <div className={todo.isPin ? "shadow-lg" : ''}>
-                                <div className={todo.isPin ? "card border-info" : 'card '}>
+                                <div className={todo.isPin ? "card border-danger" : 'card '}>
                                     <div className=" card-body p-3 d-flex align-items-center">
                                         {todo.isPin ?
                                             <div className="bg-warning p-3 font-2xl mr-3">

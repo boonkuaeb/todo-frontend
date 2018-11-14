@@ -29,7 +29,7 @@ class Todo extends Component {
     render() {
         return (
             <div className="col-md-6 offset-md-3">
-                <div className="col-lg-3 offset-md-5">
+                <div className="col-lg-2 offset-md-5">
                     <div className="text-center">
                         <img className="card-img-top forum-card-img-top  mx-auto d-block img-fluid img-thumbnail"
                              src={this.state.profile.pictureUrl} alt={this.state.profile.displayName}/>
