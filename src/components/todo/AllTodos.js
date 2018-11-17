@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faFlagCheckered, faThumbtack, faSave, faUndo} from '@fortawesome/free-solid-svg-icons'
 import endpoint from '../../endpoint'
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 import './Todo.css';
 import axios from "axios";
@@ -75,7 +77,8 @@ class AllTodos extends Component {
 
                                             <div className="text-value-sm">
                                                 {
-                                                    (new Date(todo.date)).toString()
+                                                    // (new Date(todo.date)).toString()
+                                                    <Moment locale="th">{todo.dat}</Moment>
                                                 }
 
                                             </div>
