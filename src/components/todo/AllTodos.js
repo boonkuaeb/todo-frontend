@@ -79,12 +79,12 @@ class AllTodos extends Component {
                                             <div className="text-value-sm">
                                                 {todo.isSuccess ?
                                                     // (new Date(todo.date)).toString()
-                                                    <div>Completed At:
+                                                    <div>Completed At:{" "}
                                                         <Moment locale="th"
                                                                 format="dddd  D MMMM YYYY h:mm a">{todo.updated_at}</Moment>
                                                     </div>
                                                     :
-                                                    <div>Create At:
+                                                    <div>Create At:{" "}
                                                         <Moment locale="th"
                                                                 format="dddd  D MMMM YYYY h:mm a">{todo.date}</Moment>
                                                     </div>
