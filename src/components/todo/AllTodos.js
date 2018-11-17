@@ -80,12 +80,12 @@ class AllTodos extends Component {
                                                     // (new Date(todo.date)).toString()
                                                     <div>Completed At:
                                                         <Moment locale="th"
-                                                                format="dddd  D MMMM yyyy h:mm a">{todo.updated_at}</Moment>
+                                                                format="dddd  D MMMM YYYY h:mm a">{todo.updated_at}</Moment>
                                                     </div>
                                                     :
                                                     <div>Create At:
                                                         <Moment locale="th"
-                                                                format="dddd  D MMMM yyyy h:mm a">{todo.date}</Moment>
+                                                                format="dddd  D MMMM YYYY h:mm a">{todo.date}</Moment>
                                                     </div>
                                                 }
                                             </div>
