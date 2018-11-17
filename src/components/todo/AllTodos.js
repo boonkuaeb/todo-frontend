@@ -70,9 +70,10 @@ class AllTodos extends Component {
                                             <div className="bg-info p-3 font-2xl mr-3">
                                                 <FontAwesomeIcon icon={faFlagCheckered}/>
                                             </div>}
-                                        <div className={todo.isSuccess ? "checked" : ""}>
+                                        <div>
                                             <div className="text-muted text-uppercase font-weight-bold small">
-                                                {todo.taskName}
+                                                <div className={todo.isSuccess ? "checked" : ""}>{todo.taskName}
+                                                </div>
                                             </div>
 
                                             <div className="text-value-sm">
