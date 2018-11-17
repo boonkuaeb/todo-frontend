@@ -78,7 +78,7 @@ class AllTodos extends Component {
                                             <div className="text-value-sm">
                                                 {
                                                     // (new Date(todo.date)).toString()
-                                                    <Moment locale="th">{todo.dat}</Moment>
+                                                    <Moment locale="th" format="dddd  Do/MMMM/YYYY at h:mm:ss a">{todo.dat}</Moment>
                                                 }
 
                                             </div>
