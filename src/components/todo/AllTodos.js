@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faFlagCheckered, faThumbtack, faSave, faUndo} from '@fortawesome/free-solid-svg-icons'
+import {faFlagCheckered, faSave, faThumbtack, faUndo} from '@fortawesome/free-solid-svg-icons'
 import endpoint from '../../endpoint'
 import Moment from 'react-moment';
 import 'moment-timezone';
@@ -35,7 +35,7 @@ class AllTodos extends Component {
     };
 
 
-    callApiUpdte=(todo) =>{
+    callApiUpdte = (todo) => {
         axios.put(`${endpoint.todoApiUpdateURL}${todo.id}`, todo, {headers: {"Content-Type": "application/json"}})
             .then(res => {
                 console.log(res.data)
@@ -76,11 +76,18 @@ class AllTodos extends Component {
                                             </div>
 
                                             <div className="text-value-sm">
-                                                {
+                                                {todo.isSuccess ?
                                                     // (new Date(todo.date)).toString()
-                                                    <Moment locale="th" format="dddd  D MMMM yyyy h:mm a">{todo.dat}</Moment>
+                                                    <div>Completed At:
+                                                        <Moment locale="th"
+                                                                format="dddd  D MMMM yyyy h:mm a">{todo.updated_at}</Moment>
+                                                    </div>
+                                                    :
+                                                    <div>Create At:
+                                                        <Moment locale="th"
+                                                                format="dddd  D MMMM yyyy h:mm a">{todo.date}</Moment>
+                                                    </div>
                                                 }
-
                                             </div>
                                         </div>
                                     </div>
@@ -98,11 +105,13 @@ class AllTodos extends Component {
                                         }
                                         {!todo.isSuccess ?
 
-                                            <button onClick={() => this.handleIsSuccess(todo,true)} className="btn btn-sm btn-success float-right" type="reset">
+                                            <button onClick={() => this.handleIsSuccess(todo, true)}
+                                                    className="btn btn-sm btn-success float-right" type="reset">
                                                 <FontAwesomeIcon icon={faSave}/> Mark Done
                                             </button>
                                             :
-                                            <button onClick={() => this.handleIsSuccess(todo,false)} className="btn btn-sm btn-warning float-right" type="reset">
+                                            <button onClick={() => this.handleIsSuccess(todo, false)}
+                                                    className="btn btn-sm btn-warning float-right" type="reset">
                                                 <FontAwesomeIcon icon={faUndo}/> Restore
                                             </button>
                                         }
