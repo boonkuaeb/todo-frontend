@@ -11,10 +11,7 @@ import axios from "axios";
 class AllTodos extends Component {
 
     handleIsPin = (todo, isPinNew) => {
-        console.log("isPinNew",isPinNew);
-        console.log("Current isPin",todo.isPin);
         todo.isPin = isPinNew;
-        console.log("New isPin",todo.isPin);
 
         this.props.dispatch(
             {
@@ -25,9 +22,7 @@ class AllTodos extends Component {
     };
 
     handleIsSuccess = (todo, isNewSuccess) => {
-        console.log("Current isSuccess",todo.isSuccess);
         todo.isSuccess = isNewSuccess;
-        console.log("New isSuccess",todo.isSuccess);
 
         this.props.dispatch(
             {
